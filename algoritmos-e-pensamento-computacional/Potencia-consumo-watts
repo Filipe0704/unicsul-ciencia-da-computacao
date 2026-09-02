@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    int potencia, horas_dia; 
+    float consumo;
+    
+    printf("Potência do equipamento (w)? ");
+    scanf("%d", &potencia);
+    
+    printf("Horas de uso por dia? ");
+    scanf("%d", &horas_dia);
+    
+    consumo = (potencia*horas_dia*30)/1000.f;
+    
+    printf("Consumo mensal: %.2f kwh ", consumo);
+    
+    return 0;
+}
