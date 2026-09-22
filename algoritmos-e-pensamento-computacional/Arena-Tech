@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int participantes, jogadorpt, computadores, quantidadeT;
+    float potencia, duracao, precokwh, precokit, outroscustos;
+    float consumo, custoenergia, custoali, custototal, custopt;
+    
+    printf("======= Arena tech =======\n");
+    
+    printf("Participantes: ");
+    scanf("%d", &participantes);
+
+    printf("Total de participantes em cada time: ");
+    scanf("%d", &jogadorpt);
+    
+    printf("Quantidade de computadores utilizados:");
+    scanf("%d", &computadores);
+    
+    printf("Potência média de cada computador, em watts: ");
+    scanf("%f", &potencia);
+    
+    printf("Duração do evento em Horas:");
+    scanf("%f", &duracao);
+    
+    printf("Preço de 1KWH de energia: ");
+    scanf("%f", &precokwh);
+    
+    printf("Preço de um kit de alimentação por participante: ");
+    scanf("%f", &precokit);
+    
+    printf("Outros custos do evento: ");
+    scanf("%f", &outroscustos);
+    
+    quantidadeT = ceil((float)participantes/jogadorpt);
+    
+    consumo = (computadores*potencia*duracao)/1000;
+    
+    custoenergia = consumo * precokwh;
+    
+    custoali = participantes * precokit;
+    
+    custototal = custoenergia + custoali + outroscustos;
+    
+    custopt = custototal/participantes;
+    
+    printf("======= Arena tech =======\n");
+    
+    printf("Participantes: %d\n", participantes);
+    printf("Times necessários: %d\n", quantidadeT);
+    printf("Consumo estimado: %.2f\n KWH", consumo);
+    printf("Custo de energia: R$ %.2f\n", custoenergia);
+    printf("Custo de Alimentação: R$ %.2f\n", custoali);
+    printf("Outros custos: R$ %.2f\n", outroscustos);
+    printf("CUSTO TOTAL: R$ %.2f\n", custototal);
+    printf("CUSTO POR PARTICIPANTE: R$ %.2f\n", custopt);
+    printf("=============================\n");
+    
+    return 0;
+}
